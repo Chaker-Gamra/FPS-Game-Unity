@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -16,16 +15,37 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded;
 
+    InputAction movement;
+    InputAction jump;
+
     void Start()
     {
-        
+        jump = new InputAction("Jump", binding: "<keyboard>/space");
+        jump.AddBinding("<Gamepad>/a");
+
+        movement = new InputAction("PlayerMovement", binding: "<Gamepad>/leftStick");
+        movement.AddCompositeBinding("Dpad")
+            .With("Up", "<keyboard>/w")
+            .With("Up", "<keyboard>/upArrow")
+            .With("Down", "<keyboard>/s")
+            .With("Down", "<keyboard>/downArrow")
+            .With("Left", "<keyboard>/a")
+            .With("Left", "<keyboard>/letfArrow")
+            .With("Right", "<keyboard>/d")
+            .With("Right", "<keyboard>/rightArrow");
+
+        movement.Enable();
+        jump.Enable();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        //float x = Input.GetAxis("Horizontal");
+        //float z = Input.GetAxis("Vertical");
+        float x = movement.ReadValue<Vector2>().x;
+        float z = movement.ReadValue<Vector2>().y;
 
         move = transform.right * x + transform.forward * z;
 
@@ -38,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Mathf.Approximately(jump.ReadValue<float>(), 1))
             {
                 Jump();
             }

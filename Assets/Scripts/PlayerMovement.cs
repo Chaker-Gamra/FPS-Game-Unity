@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new InputAction("Jump", binding: "<keyboard>/space");
-        jump.AddBinding("<Gamepad>/a");
+        jump = new InputAction("Jump", binding: "<Gamepad>/a");
+        jump.AddBinding("<keyboard>/space");
 
         movement = new InputAction("PlayerMovement", binding: "<Gamepad>/leftStick");
         movement.AddCompositeBinding("Dpad")

@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: a38f0fefbda80564b890ac759138031b
+timeCreated: 1485254407
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: S_Body
+    100002: S_Bullet
+    100004: S_Clip
+    100006: S_Clip1
+    100008: S_FusionCore
+    100010: S_FusionCore1
+    100012: S_Grip
+    100014: S_Hammer
+    100016: S_Magazine
+    100018: S_Scope
+    100020: S_Trigger
+    100022: //RootNode
+    400000: S_Body
+    400002: S_Bullet
+    400004: S_Clip
+    400006: S_Clip1
+    400008: S_FusionCore
+    400010: S_FusionCore1
+    400012: S_Grip
+    400014: S_Hammer
+    400016: S_Magazine
+    400018: S_Scope
+    400020: S_Trigger
+    400022: //RootNode
+    2300000: S_Body
+    2300002: S_Bullet
+    2300004: S_Clip
+    2300006: S_Clip1
+    2300008: S_FusionCore
+    2300010: S_FusionCore1
+    2300012: S_Grip
+    2300014: S_Hammer
+    2300016: S_Magazine
+    2300018: S_Scope
+    2300020: S_Trigger
+    3300000: S_Body
+    3300002: S_Bullet
+    3300004: S_Clip
+    3300006: S_Clip1
+    3300008: S_FusionCore
+    3300010: S_FusionCore1
+    3300012: S_Grip
+    3300014: S_Hammer
+    3300016: S_Magazine
+    3300018: S_Scope
+    3300020: S_Trigger
+    4300000: S_Clip
+    4300002: S_Clip1
+    4300004: S_Magazine
+    4300006: S_FusionCore1
+    4300008: S_FusionCore
+    4300010: S_Trigger
+    4300012: S_Hammer
+    4300014: S_Bullet
+    4300016: S_Scope
+    4300018: S_Grip
+    4300020: S_Body
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 5
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

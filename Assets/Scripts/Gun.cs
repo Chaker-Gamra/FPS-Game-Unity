@@ -40,7 +40,7 @@ public class Gun : MonoBehaviour
         AudioManager.instance.Play("Shoot");
 
         muzzleFlash.Play();
-
+        
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.position, fpsCam.forward, out hit, range))
         {

@@ -13,6 +13,8 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+    public Animator animator;
+
     InputAction shoot;
 
     void Start()
@@ -27,6 +29,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
         bool isShooting = shoot.ReadValue<float>() == 1;
+        animator.SetBool("isShooting", isShooting);
 
         if (isShooting && Time.time >= nextTimeToFire)
         {
@@ -51,8 +54,8 @@ public class Gun : MonoBehaviour
 
             Quaternion impactRotation = Quaternion.LookRotation(hit.normal);
             GameObject impact = Instantiate(impactEffect, hit.point, impactRotation);
+            impact.transform.parent = hit.transform;
             Destroy(impact, 5);
         }
-
     }
 }

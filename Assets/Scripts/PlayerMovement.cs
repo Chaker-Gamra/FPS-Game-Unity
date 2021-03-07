@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isGrounded;
 
+    public Animator animator;
+
     InputAction movement;
     InputAction jump;
 
@@ -46,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         //float z = Input.GetAxis("Vertical");
         float x = movement.ReadValue<Vector2>().x;
         float z = movement.ReadValue<Vector2>().y;
+
+        animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
 
         move = transform.right * x + transform.forward * z;
 

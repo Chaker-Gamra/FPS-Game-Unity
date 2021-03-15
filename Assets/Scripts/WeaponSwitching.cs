@@ -20,8 +20,9 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Gun currentGun = FindObjectOfType<Gun>();
-        ammoInfoText.text = currentGun.currentAmmo + " / " + currentGun.magazineSize;
+        Gun gun = FindObjectOfType<Gun>();
+        ammoInfoText.text = gun.currentAmmo + " / " + gun.magazineAmmo;
+
         float scrollValue = switching.ReadValue<Vector2>().y;
 
         int previousSelected = selectedWeapon;

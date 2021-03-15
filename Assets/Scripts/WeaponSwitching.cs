@@ -1,10 +1,13 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using TMPro;
 
 public class WeaponSwitching : MonoBehaviour
 {
     InputAction switching;
     public int selectedWeapon = 0;
+    public TextMeshProUGUI ammoInfoText;
+
     void Start()
     {
         switching = new InputAction("Scroll", binding: "<Mouse>/scroll");
@@ -17,6 +20,8 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Gun currentGun = FindObjectOfType<Gun>();
+        ammoInfoText.text = currentGun.currentAmmo + " / " + currentGun.magazineSize;
         float scrollValue = switching.ReadValue<Vector2>().y;
 
         int previousSelected = selectedWeapon;

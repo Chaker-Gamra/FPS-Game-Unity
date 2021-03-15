@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -13,6 +14,13 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
+    public int currentAmmo;
+    public int maxAmmo = 10;
+    public int magazineAmmo = 30;
+
+    public float reloadTime = 2f;
+    private bool isReloading;
+
     public Animator animator;
 
     InputAction shoot;
@@ -23,11 +31,27 @@ public class Gun : MonoBehaviour
         shoot.AddBinding("<Gamepad>/x");
 
         shoot.Enable();
+
+        currentAmmo = maxAmmo;
+    }
+    private void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("isReloading", false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(currentAmmo ==0 && magazineAmmo == 0)
+        {
+            animator.SetBool("isShooting", false);
+            return;
+        }
+
+        if (isReloading)
+            return;
+
         bool isShooting = shoot.ReadValue<float>() == 1;
         animator.SetBool("isShooting", isShooting);
 
@@ -36,6 +60,11 @@ public class Gun : MonoBehaviour
             nextTimeToFire = Time.time + 1f / fireRate;
             Fire();
         }
+
+        if(currentAmmo == 0 && magazineAmmo >0 && !isReloading)
+        {
+            StartCoroutine(Reload());
+        }
     }
 
     private void Fire()
@@ -43,7 +72,7 @@ public class Gun : MonoBehaviour
         AudioManager.instance.Play("Shoot");
 
         muzzleFlash.Play();
-        
+        currentAmmo--;
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.position, fpsCam.forward, out hit, range))
         {
@@ -57,5 +86,24 @@ public class Gun : MonoBehaviour
             impact.transform.parent = hit.transform;
             Destroy(impact, 5);
         }
+    }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        animator.SetBool("isReloading", true);
+        yield return new WaitForSeconds(reloadTime);
+        animator.SetBool("isReloading", false);
+        if (magazineAmmo >= maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+            magazineAmmo -= maxAmmo;
+        }
+        else
+        {
+            currentAmmo = magazineAmmo;
+            magazineAmmo = 0;
+        }
+        isReloading = false;
     }
 }

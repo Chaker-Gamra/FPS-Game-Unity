@@ -19,7 +19,7 @@ public class Gun : MonoBehaviour
     public int magazineAmmo = 30;
 
     public float reloadTime = 2f;
-    private bool isReloading;
+    public bool isReloading;
 
     public Animator animator;
 
@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
 
         if (isReloading)
             return;
-
+       
         bool isShooting = shoot.ReadValue<float>() == 1;
         animator.SetBool("isShooting", isShooting);
 

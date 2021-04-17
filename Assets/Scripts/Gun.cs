@@ -74,7 +74,7 @@ public class Gun : MonoBehaviour
         muzzleFlash.Play();
         currentAmmo--;
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.position, fpsCam.forward, out hit, range))
+        if(Physics.Raycast(fpsCam.position + fpsCam.forward, fpsCam.forward, out hit, range))
         {
             if(hit.rigidbody != null)
             {
@@ -91,6 +91,7 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+	AudioManager.instance.Play("Reload");
         animator.SetBool("isReloading", true);
         yield return new WaitForSeconds(reloadTime);
         animator.SetBool("isReloading", false);

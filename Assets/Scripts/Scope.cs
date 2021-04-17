@@ -8,7 +8,9 @@ public class Scope : MonoBehaviour
     public GameObject scopeOverlay;
     private bool isScoped = false;
     public Camera fpsCam;
+    public Camera weaponsCam;
     InputAction scope;
+
     void Start()
     {
         scope = new InputAction("Scope", binding: "<mouse>/rightButton");
@@ -46,15 +48,17 @@ public class Scope : MonoBehaviour
     {
         animator.SetBool("isScoped", true);
         yield return new WaitForSeconds(0.25f);
-        fpsCam.fieldOfView = 30;
+        fpsCam.fieldOfView = 45;
         scopeOverlay.SetActive(true);
-        fpsCam.cullingMask = fpsCam.cullingMask & ~(1 << 11);
+        //fpsCam.cullingMask = fpsCam.cullingMask & ~(1 << 11);
+        weaponsCam.gameObject.SetActive(false);
     }
     void OnUnscoped()
     {
         animator.SetBool("isScoped", false);
         fpsCam.fieldOfView = 60;
         scopeOverlay.SetActive(false);
-        fpsCam.cullingMask = fpsCam.cullingMask | (1 << 11);
+        //fpsCam.cullingMask = fpsCam.cullingMask | (1 << 11);
+        weaponsCam.gameObject.SetActive(true);
     }
 }

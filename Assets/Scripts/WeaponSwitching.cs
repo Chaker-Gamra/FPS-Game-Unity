@@ -29,13 +29,13 @@ public class WeaponSwitching : MonoBehaviour
         if(scrollValue > 0)
         {
             selectedWeapon++;
-            if (selectedWeapon == 3)
+            if (selectedWeapon == transform.childCount)
                 selectedWeapon = 0;
         }else if (scrollValue < 0)
         {
             selectedWeapon--;
             if (selectedWeapon == -1)
-                selectedWeapon = 2;
+                selectedWeapon = transform.childCount-1;
         }
         if(previousSelected != selectedWeapon)
             SelectWeapon();

@@ -793,53 +793,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102593466183913558}
-    m_Position: {x: 300, y: 108, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102238716766734490}
-    m_Position: {x: 300, y: 168, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102100670134039114}
-    m_Position: {x: 300, y: 228, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102277268960662982}
-    m_Position: {x: 276, y: 444, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102885244088947746}
-    m_Position: {x: 300, y: 288, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102088155696507906}
-    m_Position: {x: 516, y: 444, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102625340767904258}
-    m_Position: {x: 528, y: 300, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102901032506865742}
-    m_Position: {x: 768, y: 444, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102949299928912516}
-    m_Position: {x: 528, y: 108, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102642198119822076}
-    m_Position: {x: 528, y: 168, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102106218193099826}
-    m_Position: {x: 528, y: 228, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102243588419055754}
-    m_Position: {x: 768, y: 108, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102525727787806748}
-    m_Position: {x: 768, y: 168, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102361151154106906}
-    m_Position: {x: 768, y: 228, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102379806414260514}
-    m_Position: {x: 768, y: 300, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1102942199553133880}
-    m_Position: {x: 768, y: 372, z: 0}
+    m_State: {fileID: 5206331899205676312}
+    m_Position: {x: 363.26782, y: 233.17232, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -849,4 +804,30 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 48, y: 72, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102593466183913558}
+  m_DefaultState: {fileID: 5206331899205676312}
+--- !u!1102 &5206331899205676312
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Idle_gunMiddle_AR
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 107649059ea401b4e9c5c20f21e99a55, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 

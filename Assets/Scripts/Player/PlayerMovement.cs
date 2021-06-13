@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     InputAction movement;
     InputAction jump;
+    InputAction ride;
 
     void Start()
     {
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, groundLayer);
-
+        
         if (isGrounded && velocity.y < 0)
             velocity.y = -1f;
 

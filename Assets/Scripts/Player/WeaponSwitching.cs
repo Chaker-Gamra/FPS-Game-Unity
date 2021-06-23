@@ -1,3 +1,4 @@
+using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using TMPro;
@@ -22,10 +23,11 @@ public class WeaponSwitching : MonoBehaviour
     {
         Gun gun = FindObjectOfType<Gun>();
         ammoInfoText.text = gun.currentAmmo + " / " + gun.magazineAmmo;
-
-        float scrollValue = switching.ReadValue<Vector2>().y;
+        
+        //float scrollValue = switching.ReadValue<Vector2>().y;
 
         int previousSelected = selectedWeapon;
+        /*
         if(scrollValue > 0)
         {
             selectedWeapon++;
@@ -37,6 +39,14 @@ public class WeaponSwitching : MonoBehaviour
             if (selectedWeapon == -1)
                 selectedWeapon = transform.childCount-1;
         }
+        */
+        if (CrossPlatformInputManager.GetButtonDown("Switch"))
+        {
+            selectedWeapon++;
+            if (selectedWeapon == transform.childCount)
+                selectedWeapon = 0;
+        }
+
         if(previousSelected != selectedWeapon)
             SelectWeapon();
 

@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     InputAction movement;
     InputAction jump;
     InputAction ride;
+
+    public FixedJoystick joystick;
 
     void Start()
     {
@@ -47,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //float x = Input.GetAxis("Horizontal");
         //float z = Input.GetAxis("Vertical");
-        float x = movement.ReadValue<Vector2>().x;
-        float z = movement.ReadValue<Vector2>().y;
+        float x = joystick.Horizontal;
+        float z = joystick.Vertical;
 
         animator.SetFloat("speed", Mathf.Abs(x) + Mathf.Abs(z));
 
@@ -63,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            if (Mathf.Approximately(jump.ReadValue<float>(), 1))
+            if (CrossPlatformInputManager.GetButtonDown("Jump"))
             {
                 Jump();
             }

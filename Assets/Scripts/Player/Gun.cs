@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Gun : MonoBehaviour
 {
@@ -52,8 +53,8 @@ public class Gun : MonoBehaviour
 
         if (isReloading)
             return;
-       
-        bool isShooting = shoot.ReadValue<float>() == 1;
+
+        bool isShooting = CrossPlatformInputManager.GetButton("Shoot");
         animator.SetBool("isShooting", isShooting);
 
         if (isShooting && Time.time >= nextTimeToFire)
